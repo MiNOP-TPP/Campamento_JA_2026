@@ -1,0 +1,1932 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Campamento JA 2026 | Generación Misionera</title>
+
+ 
+<script src="https://fonts.googleapis.com"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle at center,
+        rgba(255,215,0,.12),
+        transparent 65%
+    );
+
+    pointer-events:none;
+}
+
+
+body{
+    background:
+    linear-gradient(
+        rgba(0,0,0,.35),
+        rgba(0,0,0,.65)
+    ),
+    url('img/foto.jpeg');
+
+    background-size:cover;
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+
+    min-height:100vh;
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(34,197,94,.08),
+            transparent 70%
+        );
+
+    pointer-events:none;
+}
+
+/* MENU */
+
+.navbar{
+
+    background:
+    rgba(255,255,255,.08);
+
+    backdrop-filter:
+    blur(20px);
+
+    border:
+    1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.25);
+
+}
+
+.navbar{
+
+    position:fixed;
+
+    top:15px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:95%;
+    max-width:1400px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:15px 25px;
+
+    z-index:9999;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:25px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.25);
+}
+
+.logo{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    text-decoration:none;
+
+    color:#FFD700;
+
+    font-size:1.2rem;
+    font-weight:700;
+}
+
+#menu ul{
+
+    display:flex;
+    align-items:center;
+
+    list-style:none;
+
+    gap:25px;
+}
+
+#menu a{
+
+    position:relative;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+#menu a:hover{
+    color:#FFD700;
+}
+
+#menu a:not(.menu-btn)::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-5px;
+
+    width:0;
+    height:2px;
+
+    background:#FFD700;
+
+    transition:.3s;
+}
+
+#menu a:not(.menu-btn):hover::after{
+    width:100%;
+}
+
+/* BOTON INSCRIPCIÓN */
+
+.menu-btn{
+
+    padding:12px 22px;
+
+    border-radius:50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #22c55e,
+            #15803d
+        );
+
+    color:white !important;
+
+    box-shadow:
+        0 10px 20px rgba(34,197,94,.25);
+}
+
+.menu-btn:hover{
+
+    transform:
+        translateY(-2px);
+
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:20px;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    font-weight:600;
+}
+
+nav a:hover{
+    color:#FFD700;
+}
+
+.menu-toggle{
+    display:none;
+    background:none;
+    border:none;
+    color:white;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* VIDEO */
+
+.video-section{
+
+    padding-top:170px;
+
+    margin-bottom:60px;
+
+    max-width:1200px;
+
+    margin-left:auto;
+    margin-right:auto;
+
+    padding-left:20px;
+    padding-right:20px;
+}
+
+.hero-video{
+    width:100%;
+    border-radius:35px;
+    display:block;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.45);
+}
+
+.video-container{
+
+    border-radius:40px;
+
+    overflow:hidden;
+
+    border:2px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.45);
+
+    transition:.4s ease;
+}
+
+.video-container:hover{
+
+    transform:
+        translateY(-8px)
+        scale(1.01);
+}
+
+.video-container iframe{
+
+    width:100%;
+
+    height:650px;
+
+    border:none;
+
+    display:block;
+}
+
+@media(max-width:768px){
+
+    .video-container iframe{
+        height:250px;
+    }
+
+}
+
+/* HERO */
+
+.hero-background{
+
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.35),
+        rgba(0,0,0,.75)
+    ),
+    url('img/campamento.jpeg');
+
+    background-size:cover;
+    background-position:center;
+
+    filter:
+        brightness(1.05)
+        contrast(1.1)
+        saturate(1.15);
+
+}
+
+
+
+.hero-content{
+    position:relative;
+    z-index:2;
+
+    margin-top:-180px;
+}
+
+.hero-badge{
+    display:inline-block;
+    padding:12px 20px;
+    border-radius:50px;
+    background:rgba(255,215,0,.15);
+    color:#FFD700;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(4rem,10vw,8rem);
+    line-height:1;
+    color:#FFD700;
+    text-shadow:
+        0 0 20px rgba(255,215,0,.8),
+        0 0 50px rgba(255,215,0,.4);
+}
+
+.hero-subtitle{
+
+    margin-top:20px;
+
+    font-size:2rem;
+
+    color:white;
+
+    font-weight:600;
+
+    opacity:.95;
+}
+
+
+.hero-card{
+
+    padding:25px 35px;
+
+    margin-top:25px;
+
+    border-radius:25px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    backdrop-filter:
+    blur(15px);
+
+    border:
+    1px solid rgba(255,255,255,.1);
+}
+`
+
+.hero{
+    min-height:85vh;
+
+    display:flex;
+    justify-content:flex-start;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    padding-top:80px;
+}
+`
+
+.hero h1{
+
+    font-size:6rem;
+
+    color:#FFD700;
+
+    text-transform:uppercase;
+
+    letter-spacing:4px;
+
+    text-shadow:
+        0 0 20px rgba(255,215,0,.8),
+        0 0 50px rgba(255,215,0,.5);
+}
+
+.hero{
+    text-align:center;
+    padding:40px 20px 5px;
+}
+
+.hero h1{
+    font-size:5rem;
+    color:#FFD700;
+    text-shadow:0 0 20px rgba(255,215,0,.6);
+}
+
+.hero h2{
+    margin-top:10px;
+    font-size:2rem;
+}
+
+.hero p{
+    margin-top:20px;
+    font-size:1.1rem;
+    line-height:1.8;
+}
+
+.hero-title{
+
+    font-size:clamp(4rem,8vw,7rem);
+
+    line-height:.95;
+
+    color:#FFD700;
+
+    text-transform:uppercase;
+
+    font-weight:800;
+
+    letter-spacing:3px;
+
+    text-shadow:
+        0 0 15px rgba(255,215,0,.5),
+        0 0 35px rgba(255,215,0,.25);
+
+    animation:titleFloat 6s ease-in-out infinite;
+}
+
+.hero-description{
+
+    margin-top:20px;
+
+    font-size:1.15rem;
+
+    color:#e2e8f0;
+
+    letter-spacing:1px;
+}
+
+/* CONTADOR */
+
+.countdown-section{
+    padding:40px 20px;
+    text-align:center;
+}
+
+.countdown-section h2{
+    color:#FFD700;
+    margin-bottom:30px;
+}
+
+.countdown{
+
+    margin-top:40px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+}
+
+.time-box{
+
+    background:
+    rgba(255,255,255,.08);
+
+    backdrop-filter:
+    blur(20px);
+
+    border-radius:25px;
+
+    padding:30px;
+
+    min-width:150px;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.25);
+}
+
+.time-box span{
+
+    font-size:3rem;
+
+    font-weight:800;
+
+    background:
+        linear-gradient(
+            90deg,
+            #FFD700,
+            #F59E0B
+        );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.time-box{
+
+    width:140px;
+    height:140px;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    border-radius:30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.12),
+            rgba(255,255,255,.04)
+        );
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,.25);
+
+    transition:.4s ease;
+}
+
+.time-box:hover{
+
+    transform:
+        translateY(-8px)
+        scale(1.05);
+}
+
+.time-box span{
+    display:block;
+    font-size:3rem;
+    font-weight:700;
+    color:#FFD700;
+}
+
+.time-box small{
+    color:white;
+}
+
+@keyframes floatCard{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-8px);}
+    100%{transform:translateY(0);}
+}
+
+.pulse{
+    animation:pulse .4s ease;
+}
+
+@keyframes pulse{
+    50%{
+        transform:scale(1.2);
+    }
+}
+
+/* BOTONES */
+
+.botones{
+    margin-top:-10px;
+
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-top:30px;
+}
+
+.btn{
+
+    padding:18px 36px;
+
+    border-radius:60px;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+    transition:.3s;
+}
+
+.btn:hover{
+
+    transform:
+        translateY(-5px)
+        scale(1.04);
+}
+.btn{
+    padding:15px 30px;
+    border-radius:50px;
+    text-decoration:none;
+    color:white;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+}
+
+.btn-register{
+    background:linear-gradient(135deg,#22c55e,#16a34a);
+}
+
+.btn-voucher{
+    background:linear-gradient(135deg,#3b82f6,#2563eb);
+}
+
+.btn-programa{
+    background:linear-gradient(135deg,#f54927,#2563eb);
+}
+.btn-location{
+    background:linear-gradient(135deg,#f59e0b,#ea580c);
+}
+
+/* SECCIONES */
+
+.section{
+    max-width:1200px;
+    margin:40px auto;
+    padding:40px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+
+    border-radius:25px;
+}
+
+.section-header h2{
+
+    font-size:3rem;
+
+    color:#FFD700;
+
+    margin-bottom:15px;
+
+    text-shadow:
+        0 0 15px rgba(255,215,0,.35);
+}
+
+.section-header{
+    text-align:center;
+    max-width:800px;
+    margin:0 auto 40px;
+}
+
+.section-badge{
+    display:inline-block;
+
+    padding:10px 22px;
+
+    border-radius:50px;
+
+    background:rgba(255,215,0,.15);
+
+    border:1px solid rgba(255,215,0,.25);
+
+    color:#FFD700;
+
+    font-size:.85rem;
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    margin-bottom:20px;
+}
+
+.section-header h2{
+    font-size:clamp(2rem,4vw,3.5rem);
+
+    color:#FFD700;
+
+    font-weight:800;
+
+    margin-bottom:15px;
+
+    text-shadow:
+        0 0 15px rgba(255,215,0,.35);
+}
+
+.section-header p{
+    font-size:1.15rem;
+    color:#f1f5f9;
+    line-height:1.8;
+}
+
+.section-header h2{
+
+    font-size:clamp(2rem,4vw,3.5rem);
+
+    color:#FFD700;
+
+    margin-bottom:15px;
+
+    text-shadow:
+        0 0 15px rgba(255,215,0,.35);
+}
+
+.section-header p{
+
+    color:#f1f5f9;
+
+    font-size:1.15rem;
+
+    line-height:1.8;
+}
+
+/* Beneficios */
+
+.beneficios{
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(180px,220px));
+
+    justify-content:center;
+
+    gap:25px;
+
+    margin-top:40px;
+}
+
+.beneficio-card{
+
+    width:220px;
+    height:160px;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:20px;
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.10),
+            rgba(255,255,255,.04)
+        );
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    transition:.4s ease;
+}
+
+.beneficio-card:hover{
+
+    transform:
+        translateY(-10px)
+        scale(1.05);
+
+    border-color:
+        rgba(255,215,0,.35);
+
+    box-shadow:
+        0 25px 50px rgba(255,215,0,.15);
+}
+
+
+.beneficio-card h3{
+
+    width:100%;
+
+    text-align:center;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    color:#ffffff;
+
+    line-height:1.5;
+
+    margin-top:12px;
+}
+
+
+
+/* Mapa*/
+
+.mapa{
+
+    width:100%;
+
+    height:500px;
+
+    border:none;
+
+    border-radius:35px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.35);
+}
+
+/* MENSAJE CAMPAMENTO */
+
+.evento-iniciado{
+    padding:30px;
+    border-radius:25px;
+    color:#FFD700;
+    font-size:2rem;
+    font-weight:700;
+    background:rgba(255,255,255,.08);
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+    box-shadow:0 10px 25px rgba(0,0,0,.3);
+}
+
+/* FOOTER */
+
+.footer{
+
+    margin-top:80px;
+
+    text-align:center;
+
+    padding:60px 20px;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.65),
+        rgba(0,0,0,.85)
+    );
+
+    color:#ffffff;
+}
+
+.footer h2{
+    color:#FFD700;
+}
+
+.footer p{
+    color:#ffffff;
+}
+
+.footer hr{
+
+    width:200px;
+
+    margin:20px auto;
+
+    border:1px solid rgba(255,255,255,.2);
+}
+
+footer{
+    text-align:center;
+    padding:20px 10px;
+    background:rgba(0,0,0,.4);
+}
+
+/* MOBILE */
+
+.menu-toggle{
+
+    display:none;
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    font-size:30px;
+
+    cursor:pointer;
+}
+
+@media(max-width:900px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    #menu{
+
+        display:none;
+
+        position:absolute;
+
+        top:80px;
+        left:0;
+
+        width:100%;
+    }
+
+    #menu.active{
+        display:block;
+    }
+
+    #menu ul{
+
+        flex-direction:column;
+
+        padding:25px;
+
+        background:
+            rgba(0,0,0,.95);
+
+        backdrop-filter:
+            blur(20px);
+
+        border-radius:20px;
+
+        gap:18px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    nav{
+        display:none;
+        position:absolute;
+        top:75px;
+        left:0;
+        width:100%;
+    }
+
+    nav.active{
+        display:block;
+    }
+
+    nav ul{
+        flex-direction:column;
+        background:rgba(0,0,0,.95);
+        padding:20px;
+        border-radius:20px;
+    }
+
+    .hero h1{
+        font-size:3rem;
+    }
+
+    .video-container iframe{
+        height:250px;
+    }
+}
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(180px,1fr));
+
+    gap:20px;
+
+    max-width:1100px;
+
+    margin:20px auto 0;
+}
+
+.stat:nth-child(1){
+    animation:floatCard 4s ease-in-out infinite;
+}
+
+.stat:nth-child(2){
+    animation:floatCard 4s ease-in-out infinite .5s;
+}
+
+.stat:nth-child(3){
+    animation:floatCard 4s ease-in-out infinite 1s;
+}
+
+@keyframes floatCard{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+
+.stat{
+
+    position:relative;
+
+    overflow:hidden;
+
+    text-align:center;
+
+    padding:25px;
+
+    min-height:140px;
+
+    border-radius:30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.10),
+            rgba(255,255,255,.04)
+        );
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    transition:.4s ease;
+
+    cursor:pointer;
+}
+
+
+.stat::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #FFD700,
+            #F59E0B,
+            #FFD700
+        );
+}
+
+
+.stat:hover{
+
+    transform:
+        translateY(-12px)
+        rotateX(3deg)
+        scale(1.03);
+
+    box-shadow:
+        0 25px 45px rgba(0,0,0,.30),
+        0 0px 30px rgba(255,215,0,.15);
+}
+
+.stat h3{
+
+    font-size:3rem;
+
+    font-weight:800;
+
+    margin-bottom:10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #FFD700,
+            #F59E0B,
+            #FFF176
+        );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    animation:shine 4s infinite;
+}
+
+..stat span{
+
+    font-size:1.15rem;
+
+    font-weight:600;
+
+    color:#ffffff;
+
+    letter-spacing:.5px;
+}
+``
+.stats-section{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(200px,1fr));
+
+    gap:20px;
+
+    max-width:1000px;
+
+    margin:auto;
+}
+
+.stat-card{
+
+    text-align:center;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+}
+
+.stat-card h3{
+
+    color:#FFD700;
+
+    font-size:3rem;
+}
+
+.subtitle-line{
+
+    width:120px;
+    height:4px;
+
+    margin:25px auto 0;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        90deg,
+        #FFD700,
+        #f59e0b
+    );
+
+    box-shadow:
+        0 0 20px rgba(255,215,0,.45);
+}
+
+.stat::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-50%;
+
+    background:
+        linear-gradient(
+            45deg,
+            transparent,
+            rgba(255,255,255,.08),
+            transparent
+        );
+
+    transform:rotate(25deg);
+
+    animation:lightSweep 8s linear infinite;
+}
+
+@keyframes lightSweep{
+
+    from{
+        transform:
+            translateX(-40%) rotate(25deg);
+    }
+
+    to{
+        transform:
+            translateX(40%) rotate(25deg);
+    }
+
+}
+
+:root{
+
+    --primary:#FFD700;
+    --green:#22c55e;
+    --forest:#14532d;
+    --white:#f8fafc;
+
+}
+``
+
+
+/* Premiun */
+
+@keyframes shine{
+
+    0%{
+        filter:brightness(1);
+    }
+
+    50%{
+        filter:brightness(1.35);
+    }
+
+    100%{
+        filter:brightness(1);
+    }
+
+}
+
+@keyframes titleFloat{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-6px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+.countdown-header{
+
+    text-align:center;
+
+    max-width:1000px;
+
+    margin:-120px auto 70px;
+}
+
+.countdown-badge{
+
+    display:inline-block;
+
+    padding:10px 20px;
+
+    margin-bottom:20px;
+
+    border-radius:50px;
+
+    background:rgba(255,215,0,.12);
+
+    color:#FFD700;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    border:1px solid rgba(255,215,0,.25);
+}
+
+.countdown-title{
+
+    font-size:clamp(2rem,4vw,3.5rem);
+
+    line-height:1.2;
+
+    color:white;
+
+    margin-bottom:15px;
+
+    animation:titleFloat 5s ease-in-out infinite;
+}
+
+.countdown-subtitle{
+
+    font-size:1.15rem;
+
+    color:#e2e8f0;
+
+    max-width:700px;
+
+    margin:auto;
+
+    line-height:1.8;
+}
+
+.premium-section{
+
+    width:90%;
+
+    max-width:1100px;
+
+    margin:50px auto;
+
+    padding:40px;
+
+    border-radius:35px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.08),
+            rgba(255,255,255,.03)
+        );
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.25);
+}
+
+
+.section-header{
+
+    max-width:800px;
+
+    margin:0 auto 20px;
+}
+
+.section-badge{
+
+    display:inline-block;
+
+    padding:10px 18px;
+
+    border-radius:50px;
+
+    background:
+        rgba(255,215,0,.15);
+
+    color:#FFD700;
+
+    font-size:.85rem;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    margin-bottom:20px;
+}
+
+.section-header h2{
+
+    font-size:3.5rem;
+
+    font-weight:800;
+
+    color:#FFD700;
+
+    margin-bottom:20px;
+
+    text-shadow:
+        0 0 15px rgba(255,215,0,.35);
+}
+
+.section-header p{
+
+    color:#f1f5f9;
+
+    font-size:1.15rem;
+
+    line-height:1.8;
+}
+ 
+ /* iconoso */
+
+ .icon{
+
+    font-size:3rem;
+
+    margin-bottom:15px;
+
+    animation:floatIcon 4s ease-in-out infinite;
+}
+
+@keyframes floatIcon{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+.icon{
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    width:70px;
+    height:70px;
+
+    margin:0 auto 15px;
+
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,215,0,.15),
+            rgba(255,215,0,.05)
+        );
+
+    color:#FFD700;
+
+    font-size:32px;
+}
+
+.beneficio-card:hover .icon{
+
+    transform:
+        scale(1.15)
+        rotate(6deg);
+
+    box-shadow:
+        0 0 25px rgba(255,215,0,.30);
+}
+
+``
+
+</style>
+
+</head>
+<body>
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+        <span>🏕️</span>
+        <span>Generación Misionera</span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle">
+        ☰
+    </button>
+
+    <nav id="menu">
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Inicio
+                </a>
+            </li>
+
+            <li>
+                <a href="programacion.html">
+                    Programación
+                </a>
+            </li>
+
+            <li>
+                <a href="https://mailadventistas-my.sharepoint.com/:f:/g/personal/ernesto_padilla_adventistas_org/IgDNB-1l2tJGTJSiQMYRZop9AZeL6QqfGFSelPo2dHiMv9U?e=854vCe" target="_blank">
+                    Voucher
+                </a>
+            </li>
+
+            <li>
+                <a href="contacto.html">
+                    Contacto
+                </a>
+            </li>
+
+            <li>
+                <a class="menu-btn"
+                   href="https://forms.cloud.microsoft/r/NDqu6VXSGu"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Inscribirme
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+<<section class="video-section">
+
+    <video
+    class="hero-video"
+    autoplay
+    controls
+    loop
+    playsinline>
+
+        <source src="video/campamento.mp4"
+                type="video/mp4">
+
+       eo>
+
+</section>
+
+<div class="info-card">
+    ...
+</div>
+
+<!-- VIDEO AQUÍ -->
+
+<section class="video-section">
+...
+</section>
+
+<div class="buttons">
+...
+</div>
+
+<section class="hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+    <span class="hero-badge">
+        CAMPAMENTO JA 2026
+    </span>
+
+    <h1 class="hero-title">
+        GENERACIÓN<br>
+        MISIONERA
+    </h1>
+
+    <p class="hero-subtitle">
+        La aventura está por comenzar
+    </p>
+
+    <p class="hero-description">
+        🌿 Naturaleza • 🤝 Amistad • 🙏 Fe • 🔥 Misión
+    </p>
+
+    <!-- CONTADOR AQUÍ -->
+
+    <div class="countdown">
+
+        <div class="time-box">
+            <span id="dias">28</span>
+            <small>Días</small>
+        </div>
+
+        <div class="time-box">
+            <span id="horas">20</span>
+            <small>Horas</small>
+        </div>
+
+        <div class="time-box">
+            <span id="minutos">04</span>
+            <small>Minutos</small>
+        </div>
+
+        <div class="time-box">
+            <span id="segundos">23</span>
+            <small>Segundos</small>
+        </div>
+
+    </div>
+
+</div>
+</section>
+<script>
+
+// 06 Noviembre 2026 - 12:00 PM
+
+const fechaCampamento = new Date(
+    2026,
+    10,
+    6,
+    12,
+    0,
+    0
+);
+
+function actualizar(id, valor){
+
+    const elemento =
+        document.getElementById(id);
+
+    if(!elemento) return;
+
+    if(elemento.textContent != valor){
+
+        elemento.textContent =
+            valor.toString().padStart(2,"0");
+
+        elemento.classList.add("pulse");
+
+        setTimeout(() => {
+
+            elemento.classList.remove("pulse");
+
+        }, 400);
+    }
+}
+
+function actualizarContador(){
+
+    const ahora = new Date();
+
+    const diferencia =
+        fechaCampamento.getTime() -
+        ahora.getTime();
+
+    if(diferencia <= 0){
+
+        clearInterval(intervalo);
+
+        document.querySelector(".countdown").innerHTML = `
+            <div class="evento-iniciado">
+                🎉 ¡EL CAMPAMENTO YA COMENZÓ!
+            </div>
+        `;
+
+        return;
+    }
+
+    const dias = Math.floor(
+        diferencia /
+        (1000 * 60 * 60 * 24)
+    );
+
+    const horas = Math.floor(
+        (diferencia %
+        (1000 * 60 * 60 * 24))
+        /
+        (1000 * 60 * 60)
+    );
+
+    const minutos = Math.floor(
+        (diferencia %
+        (1000 * 60 * 60))
+        /
+        (1000 * 60)
+    );
+
+    const segundos = Math.floor(
+        (diferencia %
+        (1000 * 60))
+        /
+        1000
+    );
+
+    actualizar("dias", dias);
+    actualizar("horas", horas);
+    actualizar("minutos", minutos);
+    actualizar("segundos", segundos);
+}
+
+actualizarContador();
+
+const intervalo =
+    setInterval(
+        actualizarContador,
+        1000
+    );
+
+</script>
+
+<section class="stats">
+
+    <div class="stat">
+        <h3>3</h3>
+        <span>Días</span>
+    </div>
+
+    <div class="stat">
+        <h3>1000+</h3>
+        <span>Participantes</span>
+    </div>
+
+    <div class="stat">
+        <h3>1</h3>
+        <span>Misión</span>
+    </div>
+
+</section>
+
+<section class="premium-section">
+
+    <div class="section-header">
+
+        <span class="section-badge">
+            ACTIVIDADES
+        </span>
+
+        <h2>¿Qué encontrarás?</h2>
+
+        <p>
+            Un programa especialmente preparado para inspirar, fortalecer y desafiar tu crecimiento espiritual.
+        </p>
+
+    </div>
+
+    <div class="beneficios">
+
+        <div class="beneficio-card">
+
+           <div class="icon">
+    <i class="fas fa-book-open"></i>
+</div>
+
+<h3>Estudios Bíblicos</h3>
+        </div>
+
+        <div class="beneficio-card">
+            <div class="icon">
+    <i class="fas fa-fire"></i>
+</div>
+
+<h3>Fogata Espiritual</h3>
+        </div>
+
+        <div class="beneficio-card">
+            <div class="icon">
+    <i class="fas fa-music"></i>
+</div>
+
+<h3>Música y Alabanza</h3>
+        </div>
+
+        <div class="beneficio-card">
+            <div class="icon">
+    <i class="fas fa-mountain-sun"></i>
+</div>
+
+<h3>Actividades al Aire Libre</h3>
+`
+        </div>
+
+        <div class="beneficio-card">
+            <div class="icon">
+    <i class="fas fa-campground"></i>
+</div>
+
+<h3>Experiencia de Campamento</h3>
+        </div>
+
+        <div class="beneficio-card">
+            <div class="icon">
+    <i class="fas fa-campground"></i>
+</div>
+
+<h3>Experiencia de Campamento</h3>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="premium-section">
+
+    <div class="section-header">
+
+        <span class="section-badge">
+            EXPERIENCIA
+        </span>
+
+        <h2> Lo que vivirás</h2>
+
+        <p>
+            Una experiencia espiritual y recreativa única diseñada para fortalecer tu relación con Dios y crear amistades para toda la vida.
+        </p>
+
+    </div>
+
+    <div class="beneficios">
+
+        <div class="beneficio-card">
+            <div class="icon">
+    <i class="fas fa-praying-hands"></i>
+</div>
+
+<h3>Fortalecimiento Espiritual</h3>
+        </div>
+
+        <div class="beneficio-card">
+            <div class="icon">
+    <i class="fas fa-people-group"></i>
+</div>
+
+<h3>Comunidad y Amistad</h3>
+        </div>
+
+        <div class="beneficio-card">
+           <div class="icon">
+    <i class="fas fa-tree"></i>
+</div>
+
+<h3>Naturaleza y Recreación</h3>
+        </div>
+
+        <div class="beneficio-card">
+            <div class="icon">
+    <i class="fas fa-people-group"></i>
+</div>
+            <h3>Música y Adoración</h3>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section" id="ubicacion">
+
+    <h1 class="hero-subtitle">
+        Ubicación del Campamento
+    </h1>
+
+    <iframe class="mapa"
+        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4639.369365749635!2d-77.08130262501123!3d-6.029593893955896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMDEnNDYuNSJTIDc3wrAwNCc0My40Ilc!5e1!3m2!1ses!2spe!4v1791256880215!5m2!1ses!2spe"
+        loading="lazy"
+        allowfullscreen>
+    </iframe>
+
+</section>
+
+
+<footer class="footer">
+
+    <h2>Ministerio Joven</h2>
+
+    <p>
+        Misión Nor Oriental del Perú
+    </p>
+
+    <hr>
+
+    <p>
+        © 2026 Generación Misionera
+    </p>
+
+</footer>
+
+<script>
+
+const menuToggle =
+    document.getElementById("menuToggle");
+
+const menu =
+    document.getElementById("menu");
+
+menuToggle.addEventListener("click", () => {
+
+    menu.classList.toggle("active");
+
+});
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Generación Misionera 2026</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<meta name="theme-color" content="#FFD700">
+
+<style>
+
+:root{
+    --gold:#FFD700;
+    --gold-dark:#f59e0b;
+    --glass:rgba(255,255,255,.08);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.25),
+        rgba(0,0,0,.60)
+    ),
+    url('img/campamento1.jpeg');
+
+    background-size:cover;
+    background-position:center;
+}
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle at center,
+        rgba(255,215,0,.12),
+        transparent 65%
+    );
+
+    pointer-events:none;
+}
+
+.container{
+
+    width:100%;
+    max-width:1200px;
+
+    padding:40px;
+
+    text-align:center;
+
+    position:relative;
+    z-index:2;
+}
+
+.badge{
+
+    display:inline-block;
+
+    padding:12px 25px;
+
+    border-radius:50px;
+
+    background:
+    rgba(255,215,0,.12);
+
+    border:
+    1px solid rgba(255,215,0,.25);
+
+    color:var(--gold);
+
+    font-size:.9rem;
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    margin-bottom:25px;
+
+    animation:fadeDown 1s ease;
+}
+
+/* hero */
+
+.hero-background{
+
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.35),
+        rgba(0,0,0,.75)
+    ),
+    url('img/campamento.jpeg');
+
+    background-size:cover;
+    background-position:center;
+
+    filter:
+        brightness(1.05)
+        contrast(1.1)
+        saturate(1.15);
+
+}
+
+.hero-title{
+
+    font-size:clamp(4rem,10vw,8rem);
+
+    line-height:.95;
+
+    color:var(--gold);
+
+    text-transform:uppercase;
+
+    text-shadow:
+        0 0 20px rgba(255,215,0,.7),
+        0 0 60px rgba(255,215,0,.3);
+
+    animation:zoomIn 1.3s ease;
+}
+
+.hero-title{
+
+    animation:
+        zoomIn 1.2s ease,
+        glow 4s ease-in-out infinite;
+}
+
+@keyframes glow{
+
+    0%{
+        text-shadow:
+            0 0 20px rgba(255,215,0,.6),
+            0 0 50px rgba(255,215,0,.3);
+    }
+
+    50%{
+        text-shadow:
+            0 0 35px rgba(255,215,0,.9),
+            0 0 70px rgba(255,215,0,.5);
+    }
+
+    100%{
+        text-shadow:
+            0 0 20px rgba(255,215,0,.6),
+            0 0 50px rgba(255,215,0,.3);
+    }
+}
+
+.line{
+
+    width:150px;
+    height:5px;
+
+    margin:30px auto;
+
+    border-radius:50px;
+
+    background:
+    linear-gradient(
+        90deg,
+        var(--gold),
+        var(--gold-dark)
+    );
+
+    box-shadow:
+        0 0 20px rgba(255,215,0,.5);
+}
+
+.subtitle{
+
+    max-width:850px;
+
+    margin:auto;
+
+    color:#f8fafc;
+
+    font-size:1.3rem;
+
+    line-height:1.9;
+
+    animation:fadeUp 1.5s ease;
+}
+
+.info-card{
+
+    max-width:700px;
+
+    margin:40px auto;
+
+    padding:30px;
+
+    border-radius:30px;
+
+    background:var(--glass);
+
+    backdrop-filter:blur(20px);
+
+    border:
+    1px solid rgba(255,255,255,.1);
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.25);
+
+    animation:fadeUp 1.8s ease;
+}
+
+.info-card p{
+
+    line-height:2;
+
+    font-size:1.1rem;
+}
+
+.buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    margin-top:30px;
+}
+
+.btn{
+
+    text-decoration:none;
+
+    color:white;
+
+    padding:18px 35px;
+
+    border-radius:60px;
+
+    font-weight:700;
+
+    transition:.35s ease;
+
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+}
+
+.btn:hover{
+
+    transform:
+    translateY(-6px)
+    scale(1.04);
+
+}
+
+.btn-enter{
+
+    background:
+    linear-gradient(
+        135deg,
+        #22c55e,
+        #15803d
+    );
+
+    box-shadow:
+    0 15px 35px rgba(34,197,94,.35);
+}
+
+.btn-program{
+
+    background:
+    linear-gradient(
+        135deg,
+        #3b82f6,
+        #2563eb
+    );
+
+    box-shadow:
+    0 15px 35px rgba(59,130,246,.35);
+}
+
+.bottom-text{
+
+    margin-top:35px;
+
+    font-size:1rem;
+
+    color:#e2e8f0;
+
+    opacity:.9;
+}
+
+.scroll-indicator{
+
+    margin-top:45px;
+
+    color:var(--gold);
+
+    animation:float 2s infinite ease-in-out;
+}
+
+/* ANIMACIONES */
+
+@keyframes fadeDown{
+
+    from{
+        opacity:0;
+        transform:translateY(-40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes zoomIn{
+
+    from{
+        opacity:0;
+        transform:scale(.8);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .container{
+        padding:25px;
+    }
+
+    .subtitle{
+        font-size:1.05rem;
+    }
+
+    .buttons{
+        flex-direction:column;
+    }
+
+    .btn{
+        width:100%;
+        justify-content:center;
+    }
+
+    .info-card p{
+        font-size:1rem;
+    }
+}
+
+/* FONDO ANIMADO PREMIUM */
+
+
+
+</style>
+
+</head>
+
+<body>
+
+    <div class="animated-bg">
+
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+
+</div>
+
+<div class="container">
+
+    <div class="badge">
+        CAMPAMENTO JA 2026
+    </div>
+
+    <h1 class="hero-title">
+        GENERACIÓN<br>
+        MISIONERA
+    </h1>
+
+    <div class="line"></div>
+
+    <p class="subtitle">
+        Una experiencia que transformará tu fe,
+        fortalecerá amistades y despertará una nueva
+        generación de jóvenes comprometidos con la misión.
+    </p>
+
+    <div class="info-card">
+
+        <p>
+            📅 06 al 08 de Noviembre de 2026
+        </p>
+
+        <p>
+            🕛 Inicio Oficial: 12:00 PM
+        </p>
+
+        <p>
+            📍 Recreo Turístico Shiruy Cocha - Calzada
+        </p>
+
+        <p>
+            💰 Inversión: S/. 75.00
+        </p>
+
+    </div>
+
+    <div class="buttons">
+
+        <a class="btn btn-enter"
+           href="inicio.html">
+            🚀 Ingresar al Campamento
+        </a>
+
+        <a class="btn btn-program"
+           href="programacion.html">
+            📅 Ver Programación
+        </a>
+
+    </div>
+
+    <div class="bottom-text">
+        Ministerio Joven · Misión Nor Oriental del Perú
+    </div>
+
+    <div class="scroll-indicator">
+        ⬇ Bienvenido
+    </div>
+
+</div>
+
+</body>
+</html>

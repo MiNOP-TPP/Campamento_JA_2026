@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contacto | Campamento JA 2026</title>
+
+<script src="https://fonts.googleapis.com"></script>
+<script src="https://fonts.gstatic.com"></script>
+
+<script src="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"></script>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:
+    linear-gradient(
+        rgba(0,0,0,.35),
+        rgba(0,0,0,.65)
+    ),
+    url('img/piscina.jpeg');
+
+    background-size:cover;
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+
+    min-height:100vh;
+}
+
+.overlay{
+    min-height:100vh;
+    background:rgba(0,0,0,.75);
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:50px 20px;
+}
+
+/* ENCABEZADO */
+
+.header{
+    text-align:center;
+    margin-bottom:40px;
+    animation:fadeDown 1s ease;
+}
+
+.header h1{
+    font-size:3rem;
+    color:#FFD700;
+    margin-bottom:10px;
+    text-shadow:
+        0 0 15px rgba(255,215,0,.6),
+        0 0 35px rgba(255,215,0,.3);
+}
+
+.header p{
+    color:white;
+    font-size:1.1rem;
+}
+
+/* TARJETA */
+
+.card{
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.10),
+            rgba(255,255,255,.05)
+        );
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:30px;
+
+    padding:45px;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.25);
+}
+
+.card h2{
+
+    color:#FFD700;
+
+    font-size:2.2rem;
+
+    font-weight:700;
+
+    margin-bottom:25px;
+
+    text-shadow:
+        0 0 15px rgba(255,215,0,.35);
+}
+
+.info{
+    font-size:1.15rem;
+    line-height:2;
+    color:#ffffff;
+    font-weight:400;
+}
+
+.info p{
+
+    color:#ffffff;
+
+    margin-bottom:12px;
+
+    text-align:center;
+
+    font-size:1.15rem;
+
+    line-height:2;
+}
+
+.email-link{
+
+    color:#FFD700;
+
+    text-decoration:none;
+
+    font-weight:600;
+}
+
+.email-link:hover{
+
+    color:#ffffff;
+}
+
+.email-link:hover{
+    color:#FFD700;
+}
+
+/* BOTONES */
+
+.contact-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.btn-whatsapp,
+.btn-email,
+.btn-home{
+    flex:1;
+    min-width:220px;
+    text-decoration:none;
+    text-align:center;
+    padding:16px 24px;
+    border-radius:50px;
+    color:white;
+    font-weight:600;
+    transition:.3s;
+}
+
+/* WHATSAPP */
+
+.contact-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.btn-whatsapp,
+.btn-email,
+.btn-home{
+    text-decoration:none;
+    color:white;
+    padding:16px 28px;
+    border-radius:50px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-whatsapp{
+    background:linear-gradient(
+        135deg,
+        #25D366,
+        #128C7E
+    );
+}
+
+.btn-email{
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+}
+
+.btn-home{
+    background:linear-gradient(
+        135deg,
+        #f59e0b,
+        #ea580c
+    );
+}
+
+.btn-whatsapp:hover,
+.btn-email:hover,
+.btn-home:hover{
+    transform:
+        translateY(-4px)
+        scale(1.03);
+}
+
+.whatsapp-float{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+
+    width:70px;
+    height:70px;
+
+    border-radius:50%;
+
+    background:#25D366;
+
+    color:white;
+    text-decoration:none;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:32px;
+
+    box-shadow:0 12px 25px rgba(0,0,0,.35);
+}
+
+.whatsapp-float:hover{
+    transform:scale(1.1);
+}
+
+/* EMAIL */
+
+.btn-email{
+    background:linear-gradient(135deg,#3B82F6,#2563EB);
+}
+
+.btn-email:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 30px rgba(59,130,246,.35);
+}
+
+/* INICIO */
+
+.btn-home{
+    background:linear-gradient(135deg,#F59E0B,#EA580C);
+}
+
+.btn-home:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 30px rgba(245,158,11,.35);
+}
+
+/* ANIMACIONES */
+
+@keyframes fadeDown{
+    from{
+        opacity:0;
+        transform:translateY(-30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .header h1{
+        font-size:2.2rem;
+    }
+
+    .contact-buttons{
+        flex-direction:column;
+    }
+
+    .btn-whatsapp,
+    .btn-email,
+    .btn-home{
+        width:100%;
+        min-width:100%;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="overlay">
+
+    <div class="container">
+
+        <div class="header">
+
+            <h1>📞 Información de Contacto</h1>
+
+            <p>
+                Campamento JA 2026 - Generación Misionera
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>ℹ️ Mayor Información</h2>
+
+            <div class="info">
+
+                <p>
+                    Para consultas relacionadas con inscripción,
+                    vouchers, transporte, alojamiento y programación
+                    del Campamento JA 2026, puedes comunicarte mediante
+                    los siguientes canales oficiales:
+                </p>
+
+                <br>
+
+                
+            </div>
+
+            <div class="contact-buttons">
+            	
+                <a class="btn btn-whatsapp"
+                href="https://api.whatsapp.com/send?phone=51942794861&text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20el%20Campamento%20JA%202026">
+                💬 WhatsApp
+            </a>
+
+                <a class="btn-email"
+                   href="mailto:ministeriojoven.mno@adventistas.org?subject=Consulta Campamento JA 2026">
+                   📧 Enviar Correo
+                </a>
+
+                <a class="btn-home"
+                   href="inicio.html">
+                   🏠 Volver al Inicio
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
