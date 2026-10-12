@@ -737,15 +737,14 @@ footer{
 <script src="https://cdnjs.cloudflare.com/ajax/5.1/jspdf.umd.min.jsscript"></script>
 <script>
 
-console.log("html2canvas:", typeof html2canvas);
-console.log("jspdf:", typeof window.jspdf);
+
 
 </script>
 
 
 <script>
 
-async function descargarPrograma() {
+
 
     try {
 
@@ -790,8 +789,14 @@ async function descargarPrograma() {
             altoPDF
         );
 
-        pdf.save(
-            "Programa_Campamento_JA_2026.pdf"
+      <a
+    class="btn btn-download"
+    href="PDF/Programa_Campamento_JA_2026.pdf"
+    download>
+
+    📥 Descargar Programa PDF
+
+</a>
         );
 
     } catch (error) {
