@@ -732,63 +732,6 @@ footer{
 
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.jsscript>"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/5.1/jspdf.umd.min.jsscript"></script>
-<script>
-
-
-
-</script>
-
-
-<script>
-
-
-
-    try {
-
-        const contenedor =
-            document.getElementById("programaPDF");
-
-        if (!contenedor) {
-
-            alert("No se encontró el contenido del programa.");
-            return;
-
-        }
-
-        const canvas =
-            await html2canvas(contenedor, {
-                scale: 2,
-                useCORS: true
-            });
-
-        const imgData =
-            canvas.toDataURL("image/png");
-
-        const { jsPDF } =
-            window.jspdf;
-
-        const pdf =
-            new jsPDF("p", "mm", "a4");
-
-        const anchoPDF =
-            pdf.internal.pageSize.getWidth();
-
-        const altoPDF =
-            (canvas.height * anchoPDF) /
-            canvas.width;
-
-        pdf.addImage(
-            imgData,
-            "PNG",
-            0,
-            0,
-            anchoPDF,
-            altoPDF
-        );
-
       <a
     class="btn btn-download"
     href="PDF/Programa_Campamento_JA_2026.pdf"
@@ -797,21 +740,6 @@ footer{
     📥 Descargar Programa PDF
 
 </a>
-        );
-
-    } catch (error) {
-
-        console.error(error);
-
-        alert(
-            "Error al generar el PDF. Revisa la consola (F12)."
-        );
-
-    }
-
-}
-
-</script>
 
 </body>
 </html>
