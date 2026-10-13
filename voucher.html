@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Subir Voucher | Campamento JA 2026</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.85)
+    ),
+    url('img/campamento.jpeg');
+
+    background-size:cover;
+    background-position:center;
+
+    color:white;
+}
+
+.container{
+
+    width:90%;
+    max-width:800px;
+
+    padding:50px;
+
+    text-align:center;
+
+    border-radius:35px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.35);
+}
+
+.badge{
+
+    display:inline-block;
+
+    padding:10px 20px;
+
+    border-radius:50px;
+
+    background:
+        rgba(255,215,0,.15);
+
+    border:
+        1px solid rgba(255,215,0,.25);
+
+    color:#FFD700;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+}
+
+h1{
+
+    font-size:2.8rem;
+
+    color:#FFD700;
+
+    margin-bottom:10px;
+}
+
+.subtitle{
+
+    color:#e2e8f0;
+
+    margin-bottom:35px;
+
+    line-height:1.8;
+}
+
+.form-group{
+
+    text-align:left;
+
+    margin-bottom:25px;
+}
+
+label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    font-weight:600;
+}
+
+select{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:15px;
+
+    font-size:16px;
+
+    outline:none;
+}
+
+.resumen{
+
+    display:none;
+
+    margin-top:20px;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    color:#FFD700;
+
+    font-weight:600;
+}
+
+.buttons{
+
+    margin-top:30px;
+
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+
+    border:none;
+
+    text-decoration:none;
+
+    padding:16px 30px;
+
+    border-radius:60px;
+
+    color:white;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+}
+
+.btn:hover{
+
+    transform:
+        translateY(-5px)
+        scale(1.03);
+}
+
+.btn-upload{
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #1d4ed8
+        );
+}
+
+.btn-home{
+
+    background:
+        linear-gradient(
+            135deg,
+            #f59e0b,
+            #ea580c
+        );
+}
+
+@media(max-width:768px){
+
+    .container{
+        padding:30px;
+    }
+
+    h1{
+        font-size:2rem;
+    }
+
+    .buttons{
+        flex-direction:column;
+    }
+
+    .btn{
+        width:100%;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <span class="badge">
+        CAMPAMENTO JA 2026
+    </span>
+
+    <h1>📄 Subir Voucher</h1>
+
+    <p class="subtitle">
+        Selecciona tu Zona y Distrito Misionero para continuar con el envío de tu comprobante.
+    </p>
+
+    <div class="form-group">
+
+    <label>Zona</label>
+
+    <select id="zona">
+
+    <option value="">
+        Seleccione una Zona
+    </option>
+
+    <option value="tarapoto_norte">
+        Zona Tarapoto Norte
+    </option>
+
+    <option value="tarapoto_sur">
+        Zona Tarapoto Sur
+    </option>
+
+    <option value="huallaga">
+        Zona Huallaga
+    </option>
+
+    <option value="yurimaguas">
+        Zona Yurimaguas
+    </option>
+
+    <option value="moyobamba">
+        Zona Moyobamba
+    </option>
+
+    <option value="rioja">
+        Zona Rioja
+    </option>
+
+    <option value="nueva_cajamarca">
+        Zona Nueva Cajamarca
+    </option>
+
+    <option value="amazonas">
+        Zona Amazonas
+    </option>
+
+</select>
+
+</div>
+
+    <div class="form-group">
+
+        <label>Distrito Misionero</label>
+
+        <select id="dm">
+
+            <option value="">
+                Primero seleccione una zona
+            </option>
+
+        </select>
+
+    </div>
+
+    <div id="resumen" class="resumen"></div>
+
+    <div class="buttons">
+
+        <button
+            id="btnVoucher"
+            class="btn btn-upload">
+
+            ⬆️ Abrir Carpeta de Voucher
+
+        </button>
+
+        <a
+            href="index.html"
+            class="btn btn-home">
+
+            🏠 Volver al Inicio
+
+        </a>
+
+    </div>
+
+</div>
+
+<script>
+
+
+
+const dms = {
+
+    tarapoto_norte: [
+
+        "DM MORALES B",
+        "DM MORALES A",
+        "DM PARTIDO ALTO",
+        "DM LAMAS",
+        "DM EL DORADO",
+        "DM VILLA UNION"
+
+    ],
+
+
+    tarapoto_sur: [
+
+        "DM GLOBAL",
+        "DM TARAPOTO CENTRAL",
+        "DM TARAPOTO SUR",
+        "DM BANDA DE SHILCAYO A",
+        "DM BANDA DE SHILCAYO B"
+
+    ],
+
+    huallaga: [
+
+        "DM PICOTA",
+        "DM BELLAVISTA A",
+        "DM BELLAVISTA B",
+        "DM SAPOSOA",
+        "DM JUANJUI A",
+        "DM JUANJUI B",
+        "DM JUANJUI C"
+
+    ],
+
+    yurimaguas: [
+
+        "DM YURIMAGUAS A",
+        "DM YURIMAGUAS B",
+        "DM YURIMAGUAS C",
+        "DM LA CARRETERA"
+
+    ],
+
+
+    moyobamba: [
+
+        "DM MOYOBAMBA CENTRAL",
+        "DM VICTORIA NUEVA",
+        "DM ZARAGOZA",
+        "DM YANTALO",
+        "DM ALONSO DE ALVARADO"
+
+    ],
+
+
+    rioja: [
+
+        "DM RIOJA CENTRAL",
+        "DM RIOJA ESTE",
+        "DM NUEVA RIOJA",
+        "DM SORITOR SUR",
+        "DM SORITOR NORTE",
+        "DM SAN MARCOS"
+
+    ],
+
+    nueva_cajamarca: [
+
+        "DM NUEVA CAJAMARCA A",
+        "DM NUEVA CAJAMARCA B",
+        "DM NUEVA CAJAMARCA C",
+        "DM NUEVA CAJAMARCA D",
+        "DM NUEVA CAJAMARCA E",
+        "DM YURACYACU",
+        "DM NARANJILLO",
+        "DM NARANJOS"
+
+    ],
+
+
+    amazonas: [
+
+        "DM PEDRO RUIZ",
+        "DM CHACHAPOYAS A",
+        "DM CHACHAPOYAS B",
+        "DM CHACHAPOYAS C",
+        "DM RODRIGUEZ DE MENDOZA A",
+        "DM RODRIGUEZ DE MENDOZA B"
+
+    ]
+
+
+};
+
+const enlacesDM = {
+
+    "DM MORALES B":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20TARAPOTO%20NORTE%2FDM%20MORALES%20B&share=cgrZhTZUceAXTpxY3DRcWzBIEgUCu%2D6bAHeTZJKYzlZTn4GoNg",
+
+    "DM MORALES A":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20TARAPOTO%20NORTE%2FDM%20MORALES%20A&share=cgrOwJpEeoSVRoXkRMWS7NnDEgUCChI4HvfLnOVQdfryD2A%5FbA",
+
+    "DM PARTIDO ALTO":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20TARAPOTO%20NORTE%2FDM%20PARTIDO%20ALTO&share=cgpzZBsuMKsGTbFoAF1edO2bEgUC6Rl%5FqNjmtJrk%5FDB%5Fb6QhLQ",
+
+    "DM LAMAS":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20TARAPOTO%20NORTE%2FDM%20LAMAS&share=cgrcZ%2D3ILfJJRrTkEmjn4UGgEgUC4cnyZTVMChxwgHiDH0CeKQ",
+
+    "DM EL DORADO":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20TARAPOTO%20NORTE%2FDM%20EL%20DORADO&share=cgptWXlRobAbQ7MpuOyybL2mEgUCeSrPGic%2D%5FWujvg9TJsFjqA",
+
+    "DM VILLA UNION":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20TARAPOTO%20NORTE%2FVILLA%20UNION&share=cgrp49wkGB1hQ7PQVp%2DL3u6EEgUCJsXSnk54YTOo0Ajhs7pQeg",
+
+    "DM GLOBAL":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20TARAPOTO%20SUR%2FDM%20GLOBAL&share=cgojGX4I%2DKGfRawiBELV1y%2DTEgUCSlS2pNwIBgJHuWi50a135Q",
+
+    "DM TARAPOTO CENTRAL":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20TARAPOTO%20SUR%2FDM%20TARAPOTO%20CENTRAL&share=cgoUwV5oujDnQKdzcn6T%2Dba0EgUCxQObW5MxfPLsFLGiv1MQ%5Fg",
+
+    "DM TARAPOTO SUR":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20TARAPOTO%20SUR%2FDM%20TARAPOTO%20SUR&share=cgqidXR4wMNaQKrhYROdmfWvEgUC0FP%5Fi6OZ5o363G1ospimVQ",
+
+    "DM BANDA DE SHILCAYO A":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20TARAPOTO%20SUR%2FDM%20BANDA%20DE%20SHILCAYO%20A&share=cgomkEgIRA9GQry%5FemWqOm2PEgUCJ9A6pQ3TF3e1zVq39OnKGg",
+
+    "DM BANDA DE SHILCAYO B":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20TARAPOTO%20SUR%2FDM%20BANDA%20DE%20HILCAYO%20B&share=cgpMt%2DqceUTcT7zR3L9ThcLZEgUCi3C1k5f9MC%2DKVLummLZrhA",
+
+    "DM PICOTA":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20HUALLAGA%2FDM%20PICOTA&share=cgoovZaJhD8cQbtQy4Q%2DyhgeEgUCQ%5FIkjLlcnbo%2Duv05YvPahA",
+
+    "DM BELLAVISTA A":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20HUALLAGA%2FDM%20BELLAVISTA%20A&share=cgrO2u6JheIZRLQLPfpQP4gjEgUCIEMpyhDGOIvgVYDZAcGyWQ",
+
+    "DM BELLAVISTA B":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20HUALLAGA%2FDM%20BELLAVISTA%20B&share=cgpMkI0HVFqrT6NGCzn58JRvEgUC22cfInBscsf63RKMjVUuvg",
+
+    "DM SAPOSOA":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20HUALLAGA%2FDM%20SAPOSOA&share=cgq8DTedUvPPTrLGl9%5FYy9NDEgUC%5FlYsUhv33W2PlCQYsLsPog",
+
+    "DM JUANJUI A":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20HUALLAGA%2FDM%20JUANJUI%20A&share=cgrpr3I5TI%5F2Q5C4SZjneDn9EgUCksiMRPXwPvRfDlWCjEGf%5Fg",
+
+    "DM JUANJUI B":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20HUALLAGA%2FDM%20JUANJUI%20B&share=cgqYeC9pay0tQIpCDlz8KyNBEgUC6%5FjzVm%2Dky5%5Ft3AYdGnSlsg",
+
+    "DM JUANJUI C":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20HUALLAGA%2FDM%20JUANJUI%20C&share=cgq6qxdtAk%5F9SrcX2B8jYiCeEgUCpy0pnTaK3IjLEgKy%5FGPr1g",
+
+    "DM YURIMAGUAS A":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20YURIMAGUAS%2FDM%20YURIMAGUAS%20A&share=cgqZ09WBS6CKSquaoq7fY8YAEgUCkbThBA37%2DeDqkO3kTBIUDw",
+
+    "DM YURIMAGUAS B":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20YURIMAGUAS%2FDM%20YURIMAGUAS%20B&share=cgo7ak%2D6iA3KTItSWMdKaGxDEgUCfSol%2DS%2DcE3Xhumsvmb7zGA",
+
+    "DM YURIMAGUAS C":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20YURIMAGUAS%2FDM%20YURIMAGUAS%20C&share=cgqgZ80s7YYqSYKx4BaTV2b7EgUCI1oi9jg0RlK%2DzYQwCnlGUQ",
+
+    "DM LA CARRETERA":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20YURIMAGUAS%2FDM%20LA%20CARRETERA&share=cgoi3Be35PoCRa4JbdJMoePFEgUCUBk1mPltRebf6uxORqQzcQ",
+
+    "DM MOYOBAMBA CENTRAL":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20MOYOBAMBA%2FDM%20MOYOBAMBA%20CENTRAL&share=cgoJzdaJfBMDSaB3USa6mFMWEgUCU9CFNjrUmBurEKnCFXelfA",
+
+    "DM VICTORIA NUEVA":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20MOYOBAMBA%2FDM%20VICTORIA%20NUEVA&share=cgpF8BtUpeRYRI1NYIIw0kv5EgUCkhbj8KVKr%2DS3YOQgzZoP1w",
+
+    "DM ZARAGOZA":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20MOYOBAMBA%2FDM%20ZARAGOZA&share=cgoODmzcUn8cRKJUwzm7qSmMEgUCU52Aw6w83oH1j3jmm0VKCA",
+
+    "DM YANTALO":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20MOYOBAMBA%2FDM%20YANTALO&share=cgrBPeBnSP%2DtRYRQkPjxMLlsEgUCKaGdOwsT2CScKSRFrFbT4g",
+
+    "DM ALONSO DE ALVARADO":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20MOYOBAMBA%2FDM%20ALONSO%20DE%20ALVARADO&share=cgoR53%2DzAdmwRLCGcD6a54m7EgUCM9Po%2DaSkaprYmVC3rFKBCA",
+
+    "DM RIOJA CENTRAL":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20RIOJA%2FDM%20RIOJA%20CENTRAL&share=cgrq0lTc8ywNQJ0LyVo%5FlbzeEgUCOuFddMN0mm3oMZlNjNRecg",
+
+    "DM RIOJA ESTE":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20RIOJA%2FDM%20RIOJA%20ESTE&share=cgotTWTDGoPDTrohaRzhcIEdEgUCyAoQAjXbrHKFiZZnGf%5F%2DGA",
+
+    "DM NUEVA RIOJA":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20RIOJA%2FDM%20NUEVA%20RIOJA&share=cgpmLf6af9MJR7aXcyIfLyJsEgUCfa17UrPuCiPfqTJ1oBzkrA",
+
+    "DM SORITOR SUR":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20RIOJA%2FDM%20SORITOR%20SUR&share=cgpXgEcB4b35QapuXWQcO2r%5FEgUCC5CYQ%2DXK5XP5eYydr1IpnQ",
+
+    "DM SORITOR NORTE":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20RIOJA%2FDM%20SORITOR%20NORTE&share=cgoqQFxtzb%2D5Rbw4qUghY2tPEgUCP0AD8lJP%5FhnU2zg0wU83wA",
+
+    "DM SAN MARCOS":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20RIOJA%2FDM%20SAN%20MARCOS&share=cgrPeITt8WfOSYxy5qabpXEUEgUCMnVCoLv5u5%5F8wn6FMy9fAA",
+
+    "DM NUEVA CAJAMARCA A":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20NUEVA%20CAJAMARCA%2FDM%20NVA%20CAJAMARCA%20A&share=cgrZY0DId%2DX%2DS7RwzAJcj1%5F7EgUCHPkDm%5F1rnaUZqIF0Mk6YEw",
+
+    "DM NUEVA CAJAMARCA B":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20NUEVA%20CAJAMARCA%2FDM%20NVA%20CAJAMARCA%20B&share=cgoO0a9AD9t8TL3QmDscwnALEgUC8vGYAuip9BlZ0py%2D3yVLGg",
+
+    "DM NUEVA CAJAMARCA C":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20NUEVA%20CAJAMARCA%2FDM%20NVA%20CAJAMARCA%20C&share=cgqSpcPVXv26QYKSiqeQARr2EgUC7gNZZAAF1UjWBN%2DLv4ZHrg",
+
+    "DM NUEVA CAJAMARCA D":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20NUEVA%20CAJAMARCA%2FDM%20NVA%20CAJAMARCA%20D&share=cgpq%5F33ibzgzR5fV1VgngumzEgUCNwggqn892PwgxIC4ULEtUg",
+
+    "DM NUEVA CAJAMARCA E":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20NUEVA%20CAJAMARCA%2FDM%20NVA%20CAJAMARCA%20E&share=cgqc0IZSFo5bSL%5FN87pPRRA1EgUCs8xzArfjHERW6gND%2DfePfw",
+
+    "DM YURACYACU":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20NUEVA%20CAJAMARCA%2FDM%20YURACYACU&share=cgrT3URumWCQSbPsfsGJ%5F2h3EgUCIBoV4SOx6ozIyG2T1w5eww",
+
+    "DM NARANJILLO":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20NUEVA%20CAJAMARCA%2FDM%20NARANJILLO&share=cgo2JcgtDk88RqkWQ0g18MtxEgUCsB0GVanQ04LEXJrTS9pzZw",
+
+    "DM NARANJOS":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20NUEVA%20CAJAMARCA%2FDM%20NARANJOS&share=cgrPb5mBG%5F0yQ5bDVWvm3%5FvFEgUCK%2DFFHj6DeL%2D7hf4jhTpKIw",
+
+    "DM PEDRO RUIZ":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20AMAZONAS%2FDM%20PEDRO%20RUIZ&share=cgrW3AE6lBRzToFs3bHR%2DVsuEgUC1dAE6BStG7bKJm8YQizEjw",
+
+    "DM CHACHAPOYAS A":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20AMAZONAS%2FDM%20CHACHAPOYAS%20A&share=cgrGLJKK1bL1RY0UqLnAe44tEgUC37Rll5j8mMpRjzb8hFga4Q",
+
+    "DM CHACHAPOYAS B":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20AMAZONAS%2FDM%20CHACHAPOYAS%20B&share=cgot%2DzwHoF2FS5ljIVdRv5KfEgUCZ9vZU9ilzC86jNOWpPAlGw",
+
+    "DM CHACHAPOYAS C":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20AMAZONAS%2FDM%20CHACHAPOYAS%20C&share=cgpIe2fen%5FD2TZljCInYzShdEgUCnMuWo6anvbqt72icRBuqJQ",
+
+    "DM RODRIGUEZ DE MENDOZA A":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20AMAZONAS%2FDM%20RODRIGUEZ%20DE%20MENDOZA%20A&share=cgprszNHaXhUTJa3GSvz%2DZW1EgUC1Ps3TUvKCMmUyhB2Oi%2D5aw",
+
+    "DM RODRIGUEZ DE MENDOZA B":
+    "https://mailadventistas-my.sharepoint.com/:f:/r/personal/ernesto_padilla_adventistas_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fernesto%5Fpadilla%5Fadventistas%5Forg%2FDocuments%2FVOUCHER%20CAMPAMENTO%20JA%202026%2FZONA%20AMAZONAS%2FDM%20RODRIGUEZ%20DE%20MENDOZA%20B&share=cgreguLInjqgQIYcOWjqpI%2DtEgUC7aiOf7YwcQsk8J5dBJE1SA",
+
+   
+};
+
+
+const zona = document.getElementById("zona");
+const dm = document.getElementById("dm");
+
+zona.addEventListener("change", function(){
+
+    dm.innerHTML = "";
+
+    const zonaSeleccionada = this.value;
+
+    if(!zonaSeleccionada){
+
+        dm.innerHTML =
+        '<option value="">Primero seleccione una zona</option>';
+
+        return;
+
+    }
+
+    dm.innerHTML =
+    '<option value="">Seleccione un Distrito Misionero</option>';
+
+    dms[zonaSeleccionada].forEach(function(item){
+
+        const option =
+            document.createElement("option");
+
+        option.value = item;
+        option.textContent = item;
+
+        dm.appendChild(option);
+
+    });
+
+});
+
+dm.addEventListener("change", function(){
+
+    if(this.value){
+
+        resumen.style.display = "block";
+
+        resumen.innerHTML =
+        "<strong>Zona:</strong> "
+        + zona.options[zona.selectedIndex].text +
+        "<br><strong>DM:</strong> "
+        + this.value;
+
+    }
+
+});
+
+document
+.getElementById("btnVoucher")
+.addEventListener("click", function(){
+
+    const dm =
+        document.getElementById("dm").value;
+
+    if(!dm){
+
+        alert(
+            "Seleccione un Distrito Misionero."
+        );
+
+        return;
+    }
+
+    if(!enlacesDM[dm]){
+
+        alert(
+            "Aún no existe un enlace configurado para este DM."
+        );
+
+        return;
+    }
+
+    window.open(
+        enlacesDM[dm],
+        "_blank"
+    );
+
+});
+
+
+</script>
+
+</body>
+</html>
