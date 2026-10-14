@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Acceso Administrativo | Campamento JA 2026</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.65),
+        rgba(0,0,0,.90)
+    ),
+    url('img/campamento.jpeg');
+
+    background-size:cover;
+    background-position:center;
+}
+
+.login-container{
+
+    width:90%;
+    max-width:450px;
+
+    padding:40px;
+
+    border-radius:30px;
+
+    text-align:center;
+
+    background:
+        rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.35);
+}
+
+.badge{
+
+    display:inline-block;
+
+    padding:10px 20px;
+
+    border-radius:50px;
+
+    background:
+        rgba(255,215,0,.15);
+
+    border:
+        1px solid rgba(255,215,0,.25);
+
+    color:#FFD700;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+}
+
+h1{
+
+    color:#FFD700;
+
+    margin-bottom:10px;
+}
+
+.subtitle{
+
+    color:#f1f5f9;
+
+    margin-bottom:30px;
+}
+
+input{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+    border:none;
+
+    border-radius:15px;
+
+    font-size:16px;
+
+    outline:none;
+}
+
+button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #1d4ed8
+        );
+
+    transition:.3s;
+}
+
+button:hover{
+
+    transform:
+        translateY(-3px);
+
+}
+
+.error{
+
+    margin-top:15px;
+
+    color:#ff8080;
+
+    font-weight:600;
+}
+
+.footer{
+
+    margin-top:20px;
+
+    color:#cbd5e1;
+
+    font-size:.9rem;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login-container">
+
+    <div class="badge">
+        CAMPAMENTO JA 2026
+    </div>
+
+    <h1>🔐 Acceso Administrativo</h1>
+
+    <p class="subtitle">
+        Ingrese sus credenciales para acceder al panel.
+    </p>
+
+    <form id="loginForm">
+
+        <input
+            type="text"
+            id="usuario"
+            placeholder="Usuario"
+            required>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Contraseña"
+            required>
+
+        <button type="submit">
+            Iniciar Sesión
+        </button>
+
+    </form>
+
+    <div id="error" class="error"></div>
+
+    <div class="footer">
+        Ministerio Joven • MiNOP
+    </div>
+
+</div>
+
+<script>
+
+document
+.getElementById("loginForm")
+.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const usuario =
+        document.getElementById("usuario").value;
+
+    const password =
+        document.getElementById("password").value;
+
+    if(
+        usuario === "admin" &&
+        password === "admin2026"
+    ){
+
+        localStorage.setItem(
+            "adminJA",
+            "true"
+        );
+
+        window.location.href =
+            "admin.html";
+
+    }else{
+
+        document
+        .getElementById("error")
+        .innerHTML =
+        "❌ Usuario o contraseña incorrectos.";
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>

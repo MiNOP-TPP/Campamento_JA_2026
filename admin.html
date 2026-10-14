@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Panel Administrativo | Campamento JA 2026</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link https://cdn.jsdelivr.net/npm/chart.jsscript>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.70),
+        rgba(0,0,0,.90)
+    ),
+    url('img/campamento.jpeg');
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    color:white;
+}
+
+/* NAVBAR */
+
+.navbar{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px 30px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border-bottom:
+    1px solid rgba(255,255,255,.12);
+}
+
+.logo{
+
+    color:#FFD700;
+
+    font-size:1.4rem;
+    font-weight:700;
+}
+
+.actions{
+
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.btn{
+
+    text-decoration:none;
+
+    color:white;
+
+    padding:12px 20px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.btn:hover{
+
+    transform:
+    translateY(-3px);
+}
+
+.btn-home{
+
+    background:
+    linear-gradient(
+        135deg,
+        #f59e0b,
+        #ea580c
+    );
+}
+
+.btn-excel{
+
+    background:
+    linear-gradient(
+        135deg,
+        #16a34a,
+        #15803d
+    );
+}
+
+.btn-logout{
+
+    background:
+    linear-gradient(
+        135deg,
+        #dc2626,
+        #991b1b
+    );
+}
+
+/* CONTENEDOR */
+
+.container{
+
+    width:95%;
+    max-width:1600px;
+
+    margin:40px auto;
+}
+
+/* HEADER */
+
+.header{
+
+    text-align:center;
+
+    margin-bottom:40px;
+}
+
+.badge{
+
+    display:inline-block;
+
+    padding:10px 20px;
+
+    border-radius:50px;
+
+    background:
+    rgba(255,215,0,.15);
+
+    border:
+    1px solid rgba(255,215,0,.25);
+
+    color:#FFD700;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+}
+
+.header h1{
+
+    color:#FFD700;
+
+    font-size:3rem;
+
+    margin-bottom:10px;
+}
+
+/* DASHBOARD */
+
+.dashboard{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:20px;
+
+    margin-bottom:40px;
+}
+
+.card{
+
+    text-align:center;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:
+    1px solid rgba(255,255,255,.12);
+}
+
+.card h2{
+
+    color:#FFD700;
+
+    font-size:3rem;
+
+    margin-bottom:10px;
+}
+
+/* GRAFICOS */
+
+.charts{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(400px,1fr));
+
+    gap:20px;
+
+    margin-bottom:60px;
+}
+
+.chart-card{
+
+    padding:25px;
+
+    border-radius:25px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:
+    1px solid rgba(255,255,255,.12);
+}
+
+.chart-card h2{
+
+    text-align:center;
+
+    color:#FFD700;
+
+    margin-bottom:20px;
+}
+
+.chart-card canvas{
+
+    max-height:260px;
+}
+
+/* EXCEL */
+
+.excel-panel{
+
+    margin-top:40px;
+
+    overflow:hidden;
+
+    border-radius:30px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:
+    1px solid rgba(255,255,255,.12);
+}
+
+.panel-header{
+
+    text-align:center;
+
+    padding:25px;
+}
+
+.panel-header h2{
+
+    color:#FFD700;
+
+    margin-bottom:10px;
+}
+
+.panel-header p{
+
+    color:#e2e8f0;
+}
+
+.excel-panel iframe{
+
+    width:100%;
+
+    height:900px;
+
+    border:none;
+
+    background:white;
+}
+
+/* FOOTER */
+
+.footer{
+
+    text-align:center;
+
+    padding:40px;
+
+    margin-top:40px;
+
+    color:#cbd5e1;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .navbar{
+
+        flex-direction:column;
+
+        gap:15px;
+    }
+
+    .header h1{
+
+        font-size:2rem;
+    }
+
+    .charts{
+
+        grid-template-columns:1fr;
+    }
+
+    .excel-panel iframe{
+
+        height:650px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<script>
+
+if(localStorage.getItem("adminJA") !== "true"){
+
+    window.location.href = "login.html";
+
+}
+
+</script>
+
+<header class="navbar">
+
+    <div class="logo">
+
+        🏕️ Panel Administrativo
+
+    </div>
+
+    <div class="actions">
+
+        <a href="index.html"
+           class="btn btn-home">
+
+           🏠 Sitio Web
+
+        </a>
+
+        <a
+        href="https://mailadventistas-my.sharepoint.com/:x:/g/personal/ernesto_padilla_adventistas_org/cQqFitvo5W_dS4oqwS65-qzMEgUC3JgHl2A7U9snxU-5yCGtRA"
+        target="_blank"
+        class="btn btn-excel">
+
+            📊 Abrir Excel Completo
+
+        </a>
+
+        
+
+        <button
+            class="btn btn-logout"
+            onclick="cerrarSesion()">
+
+            🚪 Cerrar Sesión
+
+        </button>
+
+    </div>
+
+</header>
+
+<div class="container">
+
+    <div class="header">
+
+        <div class="badge">
+
+            CAMPAMENTO JA 2026
+
+        </div>
+
+        <h1>
+
+            📈 Seguimiento de Inscripciones
+
+        </h1>
+
+        <p>
+            Visualización en tiempo real desde Microsoft Excel Online
+        </p>
+
+    </div>
+
+    <div class="dashboard">
+
+        <div class="card">
+            <h2>📋</h2>
+            <span>Inscripciones</span>
+        </div>
+
+        <div class="card">
+            <h2>8</h2>
+            <span>Zonas</span>
+        </div>
+
+        <div class="card">
+            <h2>46</h2>
+            <span>DM</span>
+        </div>
+
+        <div class="card">
+            <h2>S/.75</h2>
+            <span>Costo</span>
+        </div>
+
+    </div>
+
+    
+
+    <div class="excel-panel">
+
+        <div class="panel-header">
+
+            <h2>
+                📋 Excel de Inscripciones
+            </h2>
+
+            <p>
+                Información actualizada automáticamente desde Microsoft Forms y Excel Online.
+            </p>
+
+        </div>
+
+        <iframe
+            width="100%"
+            height="900"
+            frameborder="0"
+            scrolling="yes"
+           
+            src="https://mailadventistas-my.sharepoint.com/personal/ernesto_padilla_adventistas_org/_layouts/15/Doc.aspx?sourcedoc={e8db8a85-6fe5-4bdd-8a2a-c12eb9faaccc}&action=embedview&wdAllowInteractivity=False&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True">
+                
+            </iframe>
+
+    </div>
+
+</div>
+
+<footer class="footer">
+
+    Ministerio Joven • Misión Nor Oriental del Perú
+
+</footer>
+
+<script>
+
+function cerrarSesion(){
+
+    localStorage.removeItem("adminJA");
+
+    window.location.href = "login.html";
+
+}
+
+/* Datos temporales */
+
+new Chart(
+document.getElementById("graficoZona"),
+{
+    type:"bar",
+    data:{
+        labels:[
+            "Tarapoto Norte",
+            "Tarapoto Sur",
+            "Huallaga",
+            "Rioja"
+        ],
+        datasets:[{
+            label:"Participantes",
+            data:[2,1,0,2],
+            backgroundColor:"#FFD700"
+        }]
+    }
+});
+
+new Chart(
+document.getElementById("graficoDM"),
+{
+    type:"doughnut",
+    data:{
+        labels:[
+            "Morales B",
+            "Villa Unión",
+            "Rioja Central",
+            "Soritor Norte"
+        ],
+        datasets:[{
+            data:[1,1,1,1],
+            backgroundColor:[
+                "#FFD700",
+                "#22c55e",
+                "#3b82f6",
+                "#f59e0b"
+            ]
+        }]
+    }
+});
+
+</script>
+
+</body>
+</html>
